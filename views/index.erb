@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Sinatra with Cucumber + Capybara</title>
+  <style>
+    body { background: red; }
+    @media screen and (max-width: 330px) { #search_destination { display: none; } }
+  </style>
+  </head>
+  <body>
+
+    <form id="search_destination" method="get">
+      <label for="departure_field">Search for destinations</label>
+      <input id="departure_field" name="departure_field" type="text"/>
+    </form>
+
+    <ul class='destinations'></ul>
+
+    <ul class='departures'>
+      <% @departures.each do |departure| %>
+        <li><%= departure %></li>
+      <% end %>
+    </ul>
+    
+    <%= js :application %>
+
+  </body>
+</html>
